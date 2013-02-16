@@ -1,11 +1,17 @@
 var storagearea = chrome.storage.local;
 
+var loadtitleButton = document.querySelector('#loadtitlebutton');
+loadtitleButton.addEventListener('click', loadcurrenttitle);
 var titleButton = document.querySelector('#titlebutton');
 titleButton.addEventListener('click', addArticlesTitle);
 var customtitleButton = document.querySelector('#customtitlebutton');
 customtitleButton.addEventListener('click', addArticlesCustomTitle);
 var delButton = document.querySelector('#dbutton');
 delButton.addEventListener('click', purgeArticles);
+var exportButton = document.querySelector('#exportbutton');
+exportButton.addEventListener('click', exportArticles);
+var importButton = document.querySelector('#importbutton');
+importButton.addEventListener('click', importArticles);
 
 var message = document.querySelector('#articlespace');
 var length=0;
@@ -70,6 +76,13 @@ function addArticlesTitle(){
 }
 
 
+function loadcurrenttitle(){
+  chrome.tabs.getSelected(null,function(tab){
+    document.querySelector('#customtitle').value = tab.title;
+  });
+}
+
+
 function addArticlesCustomTitle(){
   if(document.querySelector('#customtitle').value){
     addArticles(document.querySelector('#customtitle').value);
@@ -87,6 +100,16 @@ function purgeArticles(){
     message.innerHTML = noartmsg;
     //document.querySelector('#alertmessages').innerHTML = noartmsg+alertclose;
   });
+}
+
+
+function exportArticles(){
+  
+}
+
+
+function importArticles(){
+  
 }
 
 loadarticles();
