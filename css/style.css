@@ -20,7 +20,7 @@ hr{
 }
 
 .image{
-  padding: 2px 2px 2px 2px;
+  padding: 2px 4px 2px 2px;
 }
 
 body .modal {
@@ -29,10 +29,30 @@ body .modal {
   margin: auto auto auto auto; /* place center */
   text-align: center;
 }
+
 body .modal.fade.in {
   top: auto; /* fade in to correct spot */
 }
 
 input{
   width: 200px;
+}
+
+.topdivarticle{
+  width: 475px;
+  padding-left: 2px;
+}
+
+.insidearticle{
+  float: left;
+  width: 450px;
+  padding: 0 0 0 0;
+}
+
+.closearticle{
+  float: right;
+  font-weight: bold;
+  text-align: right;
+  width: 20px;
+  padding-right: 5px;
 }
