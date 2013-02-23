@@ -13,6 +13,7 @@ Articles" button. In the dialog box that appears, click "Load Title" to load the
 "Choose title" to name the article with the title of the article itself, else choose "Save Custom Title" button after 
 entering the desired title of the article.
 2. To delete all the articles, click on "Clear" button.
+3. To delete a particular article, click on the "x" button corresponding to that article (i.e present beside that article).
 
 Requirements
 ------------
@@ -34,5 +35,4 @@ To use this extension follow the steps given below.
 ToDo
 ----
 
-1. Add the option to remove individual articles.
-2. Add the option to import/export the marked articles.
+1. Add the option to import/export the marked articles.
