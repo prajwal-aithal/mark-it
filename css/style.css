@@ -39,17 +39,20 @@ input{
 }
 
 .topdivarticle{
+  background-color:#e8f7f6;
   width: 475px;
   padding-left: 2px;
 }
 
 .insidearticle{
+  background-color:#e8f7f6;
   float: left;
   width: 450px;
   padding: 0 0 0 0;
 }
 
 .closearticle{
+  background-color:#e8f7f6;
   float: right;
   font-weight: bold;
   text-align: right;

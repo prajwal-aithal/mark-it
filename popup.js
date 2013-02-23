@@ -33,6 +33,7 @@ function clickerfunc() {
 function loadarticles(){
   storagearea.get('articles', function(items){
     //alert(items.articles);
+    //alert(items.articles.length);
     if(items.articles){
       curr_articles = items.articles;
       length = items.articles.length;
@@ -195,21 +196,23 @@ function addArticlesCustomTitle(){
 
 
 function purgeArticles(){
-  storagearea.remove('articles', function(items) {
-  for (i=0;i<length;i++){
-    message.removeChild(message.lastChild);
+  if(length != 0){
+    storagearea.remove('articles', function(items) {
+    for (i=0;i<length;i++){
+      message.removeChild(message.lastChild);
+    }
+    var topdiv= document.createElement('div');
+    topdiv.setAttribute("class", "topdivarticle");
+    var inmaindiv= document.createElement('div');
+    inmaindiv.setAttribute("class", "insidearticle");
+    var inclosediv= document.createElement('div');
+    inclosediv.setAttribute("class", "closearticle");
+    inmaindiv.appendChild(document.createTextNode(purgemsg));
+    topdiv.appendChild(inmaindiv);
+    topdiv.appendChild(inclosediv);
+    message.appendChild(topdiv);
+    });
   }
-  var topdiv= document.createElement('div');
-  topdiv.setAttribute("class", "topdivarticle");
-  var inmaindiv= document.createElement('div');
-  inmaindiv.setAttribute("class", "insidearticle");
-  var inclosediv= document.createElement('div');
-  inclosediv.setAttribute("class", "closearticle");
-  inmaindiv.appendChild(document.createTextNode(purgemsg));
-  topdiv.appendChild(inmaindiv);
-  topdiv.appendChild(inclosediv);
-  message.appendChild(topdiv);
-  });
 }
 
 
