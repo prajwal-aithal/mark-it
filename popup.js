@@ -148,7 +148,7 @@ function addArticles(ttitle,turl){
     message.innerHTML += ' ';
   });
   if(length == 0){
-    message.removeChild(message.firstChild);
+    message.removeChild(message.lastChild);
   }
   var topdiv= document.createElement('div');
   topdiv.setAttribute("class", "topdivarticle");
@@ -160,7 +160,7 @@ function addArticles(ttitle,turl){
   inmaindiv.lastChild.src="./img/bullet.png";
   inmaindiv.lastChild.setAttribute("class","image");
   inmaindiv.appendChild(document.createElement('a'));
-  inmaindiv.lastChild.href=tab.url;
+  inmaindiv.lastChild.href=turl;
   inmaindiv.lastChild.appendChild(document.createTextNode(ttitle));
   inclosediv.appendChild(document.createElement('a'));
   inclosediv.lastChild.setAttribute("artid",maxlength.toString());
