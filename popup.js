@@ -30,6 +30,9 @@ function clickerfunc() {
   deletestoragearticle(this.getAttribute("artid"));
 };
 
+function clickartfunc(){
+  chrome.tabs.create({url: this.getAttribute("href")});
+};
 
 function loadarticles(){
   storagearea.get('articles', function(items){
@@ -69,6 +72,7 @@ function loadarticles(){
           arttitle += arttext[j];
         }
         inmaindiv.lastChild.href=artlink;
+        inmaindiv.lastChild.onclick=clickartfunc;
         inmaindiv.lastChild.appendChild(document.createTextNode(arttitle));
         inclosediv.appendChild(document.createElement('a'));
         topdiv.setAttribute("id", "artid_"+i.toString());
@@ -161,6 +165,7 @@ function addArticles(ttitle,turl){
   inmaindiv.lastChild.setAttribute("class","image");
   inmaindiv.appendChild(document.createElement('a'));
   inmaindiv.lastChild.href=turl;
+  inmaindiv.lastChild.onclick=clickartfunc;
   inmaindiv.lastChild.appendChild(document.createTextNode(ttitle));
   inclosediv.appendChild(document.createElement('a'));
   inclosediv.lastChild.setAttribute("artid",maxlength.toString());
@@ -299,6 +304,7 @@ function importArticles(){
               var artlink=arttext.url;
               var arttitle=arttext.title;
               inmaindiv.lastChild.href=artlink;
+              inmaindiv.lastChild.onclick=clickartfunc;
               inmaindiv.lastChild.appendChild(document.createTextNode(arttitle));
               inclosediv.appendChild(document.createElement('a'));
               topdiv.setAttribute("id", "artid_"+l.toString());

@@ -28,6 +28,7 @@ body .modal {
   left: 5%; /* (100%-width)/2 */
   margin: auto auto auto auto; /* place center */
   text-align: center;
+  background-color: #e8f7f6;
 }
 
 body .modal.fade.in {
