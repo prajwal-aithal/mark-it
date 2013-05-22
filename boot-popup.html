@@ -19,15 +19,11 @@
               aria-labelledby="myModalLabel" aria-hidden="true"
               style="color:#000000;padding: 3px 3px 3px 3px;">
           <b>Choose the name of the article</b><hr>
-          <p>   Click on "Load Title" button to load the current title onto the input box below.<br>
-                Click on "Choose title" button to save article with the title of the article.<br>
-                Else enter the custom title in the input box provided below and click "Save Custom Title" button.
+          <p> The current title has been loaded into the input box below. Modify the title as needed, and click "Save Article" button.
           </p>
-          <input id="customtitle" type="text" value=""><br>
-          <button id="loadtitlebutton" class="btn btn-small" aria-hidden="true">Load title</button>
-          <button id="titlebutton" class="btn btn-small" data-dismiss="modal" aria-hidden="true">Choose title</button>
-          <button id="customtitlebutton" class="btn btn-small" data-dismiss="modal" 
-                  aria-hidden="true">Save custom title</button>
+          <input id="customtitle" type="text" value="" style="width:300px;" /><br>
+          <button id="saveartbutton" class="btn btn-small" data-dismiss="modal" 
+                  aria-hidden="true">Save Article</button>
           <button id="cancelbutton" class="btn btn-small" data-dismiss="modal" aria-hidden="true">Cancel</button>
         </div>
         <div id="expimpModal" class="modal hide fade" tabindex="-1" role="dialog" 
@@ -40,7 +36,14 @@
           <button id="exportbutton" class="btn btn-small" data-dismiss="modal" aria-hidden="true">Export</button>
           <button id="importbutton" class="btn btn-small" data-dismiss="modal" aria-hidden="true">Import</button>
         </div>
-        <button class="btn btn-small" type="button" id="dbutton">Clear</button>
+        <button class="btn btn-small" type="button" id="dbutton" data-toggle="modal" href="#delconfirmModal">Clear</button>
+        <div id="delconfirmModal" class="modal hide fade" tabindex="-1" role="dialog" 
+              aria-labelledby="myModalLabel" aria-hidden="true"
+              style="color:#000000;padding: 3px 3px 3px 3px;">
+          <b>Are you sure about deleting the articles!!</b><hr><br>
+          <button id="confirmbutton" class="btn btn-small" data-dismiss="modal" aria-hidden="true">Yes</button>
+          <button id="delcancelbutton" class="btn btn-small" data-dismiss="modal" aria-hidden="true">Cancel</button>
+        </div>
         <div class="accordion" id="collapser" 
               style="border:0;margin: 0px 0px 0px 0px;padding: 1px 0px 0px 0px;">
           <div class="accordion-group" style="border:0;">

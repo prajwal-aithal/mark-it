@@ -1,12 +1,10 @@
 var storagearea = chrome.storage.local;
 
-var loadtitleButton = document.querySelector('#loadtitlebutton');
-loadtitleButton.addEventListener('click', loadcurrenttitle);
-var titleButton = document.querySelector('#titlebutton');
-titleButton.addEventListener('click', addArticlesTitle);
-var customtitleButton = document.querySelector('#customtitlebutton');
-customtitleButton.addEventListener('click', addArticlesCustomTitle);
-var delButton = document.querySelector('#dbutton');
+var addButton = document.querySelector('#abutton');
+addButton.addEventListener('click', loadcurrenttitle);
+var saveartButton = document.querySelector('#saveartbutton');
+saveartButton.addEventListener('click', addArticlesCustomTitle);
+var delButton = document.querySelector('#confirmbutton');
 delButton.addEventListener('click', purgeArticles);
 var exportButton = document.querySelector('#exportbutton');
 exportButton.addEventListener('click', exportArticles);
@@ -181,13 +179,6 @@ function addArticles(ttitle,turl){
 }
 
 
-function addArticlesTitle(){
-  chrome.tabs.getSelected(null,function(tab){
-    addArticles(tab.title,tab.url);
-  });
-}
-
-
 function loadcurrenttitle(){
   chrome.tabs.getSelected(null,function(tab){
     document.querySelector('#customtitle').value = tab.title;
@@ -270,13 +261,16 @@ function importArticles(){
       bookmarkNodes = bookmarkNodes[0].children[1];
       parid = bookmarkNodes.id;
       for (i = 0; i < bookmarkNodes.children.length; i++) {
+        //alert(bookmarkNodes.children[i].title);
         if(bookmarkNodes.children[i].title == bookfoldname){
+          //alert("In... "+bookmarkNodes.children[i].title);
           markchild=bookmarkNodes.children[i].children;
           j=1;
           break;
         }
       }
       if(j == 1){
+         //alert(markchild.length);
          if(markchild.length > 0){
             storagearea.remove('articles', function(){
               curr_articles = [];
@@ -315,6 +309,7 @@ function importArticles(){
               topdiv.appendChild(inmaindiv);
               topdiv.appendChild(inclosediv);
               message.appendChild(topdiv);
+              //alert(arttitle);
               curr_articles[l] = '<a href="'+artlink+'">'+arttitle+'</a>';
             }
             storagearea.set({'articles': curr_articles});
