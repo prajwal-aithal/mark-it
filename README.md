@@ -9,9 +9,8 @@ be bookmarked.
 Usage
 -----
 1. To save a particular article, click the extension button when the tab having the article is selected, and click "Add 
-Articles" button. In the dialog box that appears, click "Load Title" to load the current title to the input box, or click 
-"Choose title" to name the article with the title of the article itself, else choose "Save Custom Title" button after 
-entering the desired title of the article.
+Articles" button. In the dialog box that appears, the current title is loaded into the input box. Modify the title as needed
+and click on "Save Articles" button.
 2. To delete all the articles, click on "Clear" button.
 3. To delete a particular article, click on the "x" button corresponding to that article (i.e present beside that article).
 4. To export the current list of articles, click on "More Options" and click on the "Export/Import" button there. In the
